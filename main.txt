@@ -1,0 +1,9 @@
+You set async to false, when you need that ajax request to be completed before the browser passes to other codes
+<script>
+    // ...
+    $.ajax(... async: false ...); // Hey browser! first complete this request, 
+                                  // then go for other codes
+    $.ajax(...); // Executed after the completion of the previous async:false request.
+</script>
+The Button is getting stucked and the browser appears to be blocked and user cannot do anything until the call is completed.
+When async call is set to false a Synchronous call is made instead of an ASynchronous call, Synchronous call is not recommend by W3C as it blocks the page until the response is received from server
